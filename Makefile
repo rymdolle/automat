@@ -6,20 +6,8 @@ LDLIBS=-lstdc++
 
 all: automat
 
-SRCS=kaffeautomat.cpp item.cpp
-OBJS=$(subst .cpp,.o,$(SRCS))
-
-automat: $(OBJS)
-	$(CXX) $(LDLIBS) $(LDFLAGS) -o automat $(OBJS)
-
-# kaffeautomat.o: kaffeautomat.cpp
-# 	$(CXX) $(CXXINCLUDE) $(CXXFLAGS) -o kaffeautomat.o kaffeautomat.cpp
-
-# item.o: item.cpp item.hpp
-#	$(CXX) $(CXXINCLUDE) $(CXXFLAGS) -o item.o item.cpp
-
-%.o : %.cpp
-	$(CXX) -c $(CXXINCLUDE) $(CXXFLAGS) $< -o $@
+automat: kaffeautomat.cpp item.h
+	$(CXX) $(LDLIBS) $(LDFLAGS) -o automat kaffeautomat.cpp
 
 .PHONY: clean
 clean:
