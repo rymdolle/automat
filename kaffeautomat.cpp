@@ -14,7 +14,7 @@ void print_menu(std::vector<Item> &supply)
     width = std::max(width, it.name().size());
 
   for (int i = 0; i < supply.size(); i++) {
-    std::cout << std::setw(4)     << std::right << i + 1 << ". "
+    std::cout << std::setw(4)       << std::right << i + 1 << ". "
               << std::setw(width+2) << std::left  << supply[i].name()
               << supply[i].cost() << " kr"
               << '\n';
