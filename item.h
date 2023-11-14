@@ -30,22 +30,14 @@ public:
       std::cout << "Left to pay: " << cost_ - payment << " kr\n";
       int coin;
       std::cin >> coin;
-      switch (coin) {
-      case 1:
-      case 2:
-      case 5:
-      case 10:
-        payment += coin;
-        break;
-      case 0:
+      if (coin <= 0) {
         std::cout << "You have chosen to abort.\n";
         // Give back change and exit program if user aborts
         get_change(payment);
         exit(1);
-      default:
-        std::cout << "Invalid denomination. Try again or abort with '0'.\n";
-        break;
       }
+
+      payment += coin;
     }
     return payment - cost_;
   }
