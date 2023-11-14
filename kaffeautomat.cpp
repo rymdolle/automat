@@ -9,7 +9,7 @@ void print_menu(std::vector<Item> &supply)
   std::cout << "\t====\n";
 
   // Find width of names
-  int width = 10;
+  size_t width = 10;
   for (auto &it : supply)
     width = std::max(width, it.name().size());
 
