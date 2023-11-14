@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
   drink.get_change(change);
 
   std::cout << '\n'
-            << "Here is your hot beverage.\n"
+            << "Here is your hot " << drink.name() << ".\n"
             << "  Enjoy!"                << '\n'
             << "         {"              << '\n'
             << "      {   }"             << '\n'
